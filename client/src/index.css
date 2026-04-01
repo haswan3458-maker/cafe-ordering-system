@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Import custom fonts for Warm Minimalism design */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* Warm Minimalism Color Palette */
+  --primary: #8B6F47;
+  --primary-foreground: #FEFDFB;
+  --sidebar-primary: #8B6F47;
+  --sidebar-primary-foreground: #FEFDFB;
+  --chart-1: #D4845C;
+  --chart-2: #A0826D;
+  --chart-3: #8B6F47;
+  --chart-4: #6B5B47;
+  --chart-5: #4B3B2F;
+  --radius: 0.75rem;
+  --background: #FEFDFB;
+  --foreground: #2C2C2C;
+  --card: #FFFFFF;
+  --card-foreground: #2C2C2C;
+  --popover: #FFFFFF;
+  --popover-foreground: #2C2C2C;
+  --secondary: #F5F1E8;
+  --secondary-foreground: #2C2C2C;
+  --muted: #E8DCC8;
+  --muted-foreground: #6B5B47;
+  --accent: #D4845C;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #E8DCC8;
+  --input: #F5F1E8;
+  --ring: #8B6F47;
+  --sidebar: #FEFDFB;
+  --sidebar-foreground: #2C2C2C;
+  --sidebar-accent: #D4845C;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #E8DCC8;
+  --sidebar-ring: #8B6F47;
+}
+
+.dark {
+  --primary: #D4845C;
+  --primary-foreground: #1A1410;
+  --sidebar-primary: #D4845C;
+  --sidebar-primary-foreground: #1A1410;
+  --background: #1A1410;
+  --foreground: #F5F1E8;
+  --card: #2C2420;
+  --card-foreground: #F5F1E8;
+  --popover: #2C2420;
+  --popover-foreground: #F5F1E8;
+  --secondary: #3C3430;
+  --secondary-foreground: #E8DCC8;
+  --muted: #4B4340;
+  --muted-foreground: #D4C4B0;
+  --accent: #D4845C;
+  --accent-foreground: #1A1410;
+  --destructive: #FF6B6B;
+  --destructive-foreground: #1A1410;
+  --border: #4B4340;
+  --input: #3C3430;
+  --ring: #D4845C;
+  --chart-1: #D4845C;
+  --chart-2: #E8A876;
+  --chart-3: #A0826D;
+  --chart-4: #8B6F47;
+  --chart-5: #6B5B47;
+  --sidebar: #2C2420;
+  --sidebar-foreground: #F5F1E8;
+  --sidebar-accent: #D4845C;
+  --sidebar-accent-foreground: #1A1410;
+  --sidebar-border: #4B4340;
+  --sidebar-ring: #D4845C;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+
+  .menu-item-name {
+    font-family: 'Caveat', cursive;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* Warm Minimalism specific components */
+  .cafe-card {
+    @apply bg-card text-card-foreground rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300;
+  }
+
+  .cafe-button {
+    @apply bg-primary text-primary-foreground font-semibold py-2 px-4 rounded-lg transition-all duration-300 hover:bg-accent hover:shadow-lg active:scale-95;
+  }
+
+  .cafe-button-secondary {
+    @apply bg-secondary text-foreground font-semibold py-2 px-4 rounded-lg transition-all duration-300 hover:bg-muted active:scale-95;
+  }
+
+  .cafe-input {
+    @apply bg-input text-foreground border border-border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300;
+  }
+
+  .menu-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  .badge-category {
+    @apply inline-block bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold;
+  }
+}
+
+/* Custom animations for Warm Minimalism */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 0.6s ease-in-out;
+}
