@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsx watch server/_core/index.ts",
-        "build": "pnpm install --production=false && npx vite build && npx esbuild server/_core/index.ts --platform=node --bundle --format=esm --outdir=dist --external:better-sqlite3 --external:@libsql/client --alias:@shared=./shared",
-    "start": "node dist/index.js",
+    "build": "pnpm install --production=false && npx vite build",
+    "start": "npx tsx server/_core/index.ts",
     "check": "tsc --noEmit",
     "format": "prettier --write .",
     "test": "vitest run",
